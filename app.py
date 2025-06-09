@@ -8,10 +8,13 @@ import os
 app = Flask(__name__)
 
 # 🔧 Set this to your actual frontend URL
-FRONTEND_ORIGIN = 'https://heart-disease-prediction-2-1a8c.onrender.com'
+FRONTEND_ORIGINS = [
+    "http://localhost:3001",
+    "https://heart-disease-prediction-2-1a8c.onrender.com"
+]
 
-# ✅ CORS: Allow only the frontend origin + support credentials & preflight
-CORS(app, resources={r"/api/*": {"origins": FRONTEND_ORIGIN}}, supports_credentials=True)
+CORS(app, resources={r"/api/*": {"origins": FRONTEND_ORIGINS}}, supports_credentials=True)
+
 
 # Configure SQLite database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
