@@ -13,8 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the backend code
 COPY . .
 
-# Expose port 5000 for Flask app
-EXPOSE 5000
+# Expose port 10000 (as your app runs on 10000)
+EXPOSE 10000
 
-# Run the Flask app
-CMD ["python", "app.py"]
+# Run the Flask app with Gunicorn on port 10000
+CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
