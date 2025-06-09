@@ -10,6 +10,7 @@ app = Flask(__name__)
 # 🔧 Set this to your actual frontend URL
 FRONTEND_ORIGINS = [
     "https://frontend-n684.onrender.com" ,
+    "https://frontend-n684.onrender.com/signup",
     "http://localhost:3001"                     # Local frontend
             				        # Deployed frontend
 ]
