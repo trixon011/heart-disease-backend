@@ -9,8 +9,9 @@ app = Flask(__name__)
 
 # 🔧 Set this to your actual frontend URL
 FRONTEND_ORIGINS = [
-    "http://localhost:3001",
-    "https://heart-disease-prediction-2-1a8c.onrender.com"
+    "https://frontend-n684.onrender.com" ,
+    "http://localhost:3001"                     # Local frontend
+            				        # Deployed frontend
 ]
 
 CORS(app, resources={r"/api/*": {"origins": FRONTEND_ORIGINS}}, supports_credentials=True)
